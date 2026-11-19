@@ -1,0 +1,139 @@
+
+/* General page styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    color: #263445;
+    padding: 40px 20px;
+}
+
+/* Main container */
+.container {
+    max-width: 850px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #123b63;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #687789;
+    margin-bottom: 30px;
+}
+
+/* Form layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #34495e;
+}
+
+input,
+select {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 15px;
+    background: white;
+    width: 100%;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #2475b9;
+    box-shadow: 0 0 4px rgba(36, 117, 185, 0.3);
+}
+
+/* Predict button */
+button {
+    width: 100%;
+    margin-top: 28px;
+    padding: 14px;
+    border: none;
+    border-radius: 7px;
+    background: #1769aa;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #104d80;
+}
+
+/* Prediction result */
+.result {
+    margin-top: 30px;
+    padding: 22px;
+    background: #edf6ff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.result h2 {
+    color: #123b63;
+    margin-bottom: 15px;
+}
+
+.result p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Disclaimer */
+.disclaimer {
+    margin-top: 25px;
+    text-align: center;
+    color: #778494;
+    font-size: 13px;
+}
+
+/* Mobile responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 22px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.positive {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.negative {
+    color: #16a34a;
+    font-weight: bold;
+}

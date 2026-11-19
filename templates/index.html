@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Heart Disease Prediction</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Heart Disease Prediction System</h1>
+
+        <p class="subtitle">
+            Enter the patient information below to generate a model prediction.
+        </p>
+
+        <form action="/predict" method="POST">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Age:</label>
+                    <input type="number" name="age" min="29" max="77" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Sex:</label>
+                    <select name="sex" required>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Chest Pain Type:</label>
+                    <select name="cp" required>
+                        <option value="0">Type 0</option>
+                        <option value="1">Type 1</option>
+                        <option value="2">Type 2</option>
+                        <option value="3">Type 3</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Resting Blood Pressure:</label>
+                    <input type="number" name="trestbps" min="94" max="200" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Cholesterol:</label>
+                    <input type="number" name="chol" min="126" max="564" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Fasting Blood Sugar:</label>
+                    <select name="fbs" required>
+                        <option value="0">False</option>
+                        <option value="1">True</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Resting ECG:</label>
+                    <select name="restecg" required>
+                        <option value="0">Type 0</option>
+                        <option value="1">Type 1</option>
+                        <option value="2">Type 2</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Maximum Heart Rate:</label>
+                    <input type="number" name="thalach" min="71" max="202" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Exercise-Induced Angina:</label>
+                    <select name="exang" required>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Oldpeak:</label>
+                    <input type="number" name="oldpeak" min="0" max="6.2" step="0.1" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Slope:</label>
+                    <select name="slope" required>
+                        <option value="0">Type 0</option>
+                        <option value="1">Type 1</option>
+                        <option value="2">Type 2</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Number of Major Vessels:</label>
+                    <select name="ca" required>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Thal:</label>
+                    <select name="thal" required>
+                        <option value="0">Type 0</option>
+                        <option value="1">Type 1</option>
+                        <option value="2">Type 2</option>
+                        <option value="3">Type 3</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <button type="submit">Predict</button>
+
+        </form>
+
+        {% if prediction %}
+
+        <div class="result">
+
+            <h2>Prediction Result</h2>
+            
+            <h3 class="{{ result_class }}">{{ prediction }}</h3>
+
+            <p>No Heart Disease: {{ no_disease }}%</p>
+
+            <p>Heart Disease: {{ heart_disease }}%</p>
+
+        </div>
+
+        {% endif %}
+
+        <p class="disclaimer">
+            Educational demonstration only. Not intended for medical diagnosis.
+        </p>
+
+    </div>
+
+</body>
+</html>
