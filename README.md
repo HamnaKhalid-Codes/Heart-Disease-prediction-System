@@ -98,8 +98,8 @@ ML/
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-cd ML
+git clone https://github.com/HamnaKhalid-Codes/Heart-Disease-prediction-System.git
+cd Heart-Disease-prediction-system 
 ```
 
 ### 2. Install dependencies
